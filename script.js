@@ -1,2 +1,9 @@
-let userWord = prompt('Entrez un mot :');
-console.log(userWord);
+const applicationWord = 'Bonjour';
+
+let userWord = prompt('Entrez le mot : ' + applicationWord);
+
+if (userWord === applicationWord) {
+  console.log('Bravo !');
+} else {
+  console.log('Vous avez fait une erreur de frappe.');
+}
