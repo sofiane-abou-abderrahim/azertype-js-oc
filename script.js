@@ -28,4 +28,4 @@ if (userWord3 === listOfWords[2]) {
   console.log('Erreur ! Votre score est toujours de: ' + score);
 }
 
-console.log('VOTRE SCORE FINAL : ' + score);
+console.log('VOTRE SCORE FINAL : ' + score + '/3');
