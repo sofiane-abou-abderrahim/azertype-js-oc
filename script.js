@@ -1,29 +1,14 @@
 // Declaration of arrays containing lists of words suggested to the user
-const words = ['Cachalot', 'Pétunia', 'Serviette'];
-const phrases = [
+const wordsList = ['Cachalot', 'Pétunia', 'Serviette'];
+const phrasesList = [
   'Pas de panique !',
   'La vie est belle',
   'Merci pour le cadeau'
 ];
 
-if (userChoice === 'mots') {
-  console.log('Votre score est de ' + score + ' sur ' + words.length);
-} else {
-  // We traverse the array of phrases
-  for (let i = 0; i < phrases.length; i++) {
-    // We ask the user to enter the phrase corresponding to index i
-    let userPhrase = prompt('Entrez la phrase : ' + phrases[i]);
-    if (userPhrase === phrases[i]) {
-      // If the phrase entered by the user is correct, we increment the score
-      score++;
-    }
-  }
-  console.log('Votre score est de ' + score + ' sur ' + phrases.length);
-}
-
 function showResult(score, numberOfQuestions) {
   console.log(
-    'Votre score fibal est de ' + score + ' sur ' + numberOfQuestions
+    'Votre score final est de ' + score + ' sur ' + numberOfQuestions
   );
 }
 
@@ -55,3 +40,20 @@ function launchGameLoop(propositionsList) {
   }
   return score;
 }
+
+function launchGame() {
+  let userChoice = choseWordsOrPhrases();
+
+  let score = 0;
+  let proposedWordsNumber = 0;
+  if (userChoice === 'mots') {
+    score = launchGameLoop(wordsList);
+    proposedWordsNumber = wordsList.length;
+  } else {
+    score = launchGameLoop(phrasesList);
+    proposedWordsNumber = phrasesList.length;
+  }
+  showResult(score, proposedWordsNumber);
+}
+
+launchGame();
