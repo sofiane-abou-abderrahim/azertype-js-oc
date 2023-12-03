@@ -4,4 +4,7 @@
  *
  *********************************************************************************/
 
+const userTextInpuElement = document.getElementById('textInput');
+const validateWordBtnElement = document.getElementById('validateWordBtn');
+
 launchGame();
