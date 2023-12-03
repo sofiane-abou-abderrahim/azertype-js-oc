@@ -19,6 +19,8 @@ function launchGame() {
 
     i++;
 
+    userTextInpuElement.value = '';
+
     if (wordsList[i] === undefined) {
       displayProposition('Le jeu est fini');
       validateWordBtnElement.disabled = true;
