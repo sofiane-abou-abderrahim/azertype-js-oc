@@ -6,18 +6,7 @@ const phrases = [
   'Merci pour le cadeau'
 ];
 
-let score = 0;
-
 if (userChoice === 'mots') {
-  // We traverse the array of words
-  for (let i = 0; i < words.length; i++) {
-    // We ask the user to enter the word corresponding to index i
-    let userWord = prompt('Entrez le mot : ' + words[i]);
-    if (userWord === words[i]) {
-      // If the word entered by the user is correct, we increment the score
-      score++;
-    }
-  }
   console.log('Votre score est de ' + score + ' sur ' + words.length);
 } else {
   // We traverse the array of phrases
@@ -51,4 +40,18 @@ function choseWordsOrPhrases() {
     );
   }
   return userChoice;
+}
+
+function launchGameLoop(propositionsList) {
+  let score = 0;
+  // We traverse the array of words
+  for (let i = 0; i < propositionsList.length; i++) {
+    // We ask the user to enter the word corresponding to index i
+    let userWord = prompt('Entrez le mot : ' + propositionsList[i]);
+    if (userWord === propositionsList[i]) {
+      // If the word entered by the user is correct, we increment the score
+      score++;
+    }
+  }
+  return score;
 }
