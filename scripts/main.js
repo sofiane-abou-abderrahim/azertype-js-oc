@@ -19,4 +19,4 @@ console.log(scoreAreaSpanElement);
 const radioBtnList = document.querySelectorAll('.sourceOption input');
 console.log(radioBtnList);
 
-// launchGame();
+launchGame();

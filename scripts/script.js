@@ -1,7 +1,6 @@
 function showResult(score, numberOfQuestions) {
-  console.log(
-    'Votre score final est de ' + score + ' sur ' + numberOfQuestions
-  );
+  let scoreDisplay = `${score} / ${numberOfQuestions}`;
+  scoreAreaSpanElement.innerHTML = scoreDisplay;
 }
 
 function choseWordsOrPhrases() {
