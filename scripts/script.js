@@ -8,10 +8,7 @@ function launchGame() {
   let proposedWordsNumber = 0;
 
   validateWordBtnElement.addEventListener('click', () => {
-    console.log("J'ai cliqué !");
-
-    const userTextValue = userTextInpuElement.value;
-    console.log(userTextValue);
+    console.log(userTextInpuElement.value);
   });
 
   showResult(score, proposedWordsNumber);
