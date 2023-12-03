@@ -8,9 +8,20 @@ function launchGame() {
   let proposedWordsNumber = 0;
   let i = 0;
 
+  let proposedWord = wordsList[i];
+  function displayProposition(proposedWord) {
+    propositionAreaElement.innerHTML = proposedWord;
+    return proposedWord;
+  }
+
+  displayProposition(proposedWord);
+
   validateWordBtnElement.addEventListener('click', () => {
-    console.log(wordsList[i]);
+    // console.log(wordsList[i]);
+
     i++;
+
+    proposedWord = displayProposition(wordsList[i]);
 
     console.log(userTextInpuElement.value);
   });
