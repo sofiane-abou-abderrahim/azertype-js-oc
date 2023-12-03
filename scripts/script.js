@@ -9,8 +9,9 @@ function launchGame() {
   let i = 0;
 
   validateWordBtnElement.addEventListener('click', () => {
+    console.log(wordsList[i]);
     i++;
-    console.log(i);
+
     console.log(userTextInpuElement.value);
   });
 
