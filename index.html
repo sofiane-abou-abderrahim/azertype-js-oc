@@ -1,12 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AzerType</title>
-    <script src="scripts/config.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/main.js"></script>
+    <title>AzerType JS</title>
+    <!-- Inclusion of the CSS file for the game's style. -->
+    <link rel="stylesheet" href="style/style.css" />
+
+    <!-- Inclusion of the 3 necessary scripts to make the game work -->
+    <!-- Attention, the order of the js files is important -->
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/popup.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>AzerType</h1>
+      <h2>L'application pour écrire plus vite !</h2>
+      <h3>
+        AzerType est une application en ligne pour apprendre à taper plus vite
+        au clavier :)
+      </h3>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <div class="optionsZone">
+        <p>
+          Choisissez votre option et tapez la proposition qui s'affiche dans le
+          champ en-dessous.
+        </p>
+        <div class="sourceOption">
+          <input
+            type="radio"
+            name="sourceOption"
+            id="words"
+            value="1"
+            checked
+          />
+          <label for="words">Mots</label>
+          <input type="radio" name="sourceOption" id="phrases" value="2" />
+          <label for="phrases">Phrases</label>
+        </div>
+      </div>
+
+      <div class="propositionZone">Azerty</div>
+
+      <div class="inputZone">
+        <input type="text" id="textInput" name="textInput" />
+        <button id="validateWordBtn">Valider</button>
+      </div>
+
+      <div class="scoreZone">Votre score : <span>0</span></div>
+
+      <div class="shareZone">
+        <button>Partager</button>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>@Copyright : Sofiane Abou Abderrahim.</footer>
+
+    <!-- Share popup -->
+    <div class="backgroundPopup">
+      <div class="popup">
+        <div>Partagez votre score</div>
+        <form novalidate>
+          <label for="name">Votre nom</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" />
+          <label for="email">Avec qui voulez-vous partager votre score ?</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="nom@domaine.com"
+          />
+          <button id="sendEmailBtn">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
