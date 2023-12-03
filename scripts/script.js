@@ -9,7 +9,6 @@ function displayProposition(proposition) {
 
 function launchGame() {
   let score = 0;
-  let proposedWordsNumber = 0;
   let i = 0;
 
   displayProposition(wordsList[i]);
@@ -17,7 +16,13 @@ function launchGame() {
   validateWordBtnElement.addEventListener('click', () => {
     console.log(userTextInpuElement.value);
 
+    if (userTextInpuElement.value === wordsList[i]) {
+      score++;
+    }
+
     i++;
+
+    showResult(score, i);
 
     userTextInpuElement.value = '';
 
@@ -29,5 +34,5 @@ function launchGame() {
     }
   });
 
-  showResult(score, proposedWordsNumber);
+  showResult(score, i);
 }
