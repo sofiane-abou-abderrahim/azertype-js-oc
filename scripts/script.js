@@ -3,27 +3,28 @@ function showResult(score, numberOfQuestions) {
   scoreAreaSpanElement.innerHTML = scoreDisplay;
 }
 
+function displayProposition(proposition) {
+  propositionAreaElement.innerHTML = proposition;
+}
+
 function launchGame() {
   let score = 0;
   let proposedWordsNumber = 0;
   let i = 0;
 
-  let proposedWord = wordsList[i];
-  function displayProposition(proposedWord) {
-    propositionAreaElement.innerHTML = proposedWord;
-    return proposedWord;
-  }
-
-  displayProposition(proposedWord);
+  displayProposition(wordsList[i]);
 
   validateWordBtnElement.addEventListener('click', () => {
-    // console.log(wordsList[i]);
+    console.log(userTextInpuElement.value);
 
     i++;
 
-    proposedWord = displayProposition(wordsList[i]);
-
-    console.log(userTextInpuElement.value);
+    if (wordsList[i] === undefined) {
+      displayProposition('Le jeu est fini');
+      validateWordBtnElement.disabled = true;
+    } else {
+      displayProposition(wordsList[i]);
+    }
   });
 
   showResult(score, proposedWordsNumber);
