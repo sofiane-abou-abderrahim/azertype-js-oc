@@ -5,15 +5,18 @@
  *********************************************************************************/
 
 const userTextInpuElement = document.getElementById('textInput');
-const validateWordBtnElement = document.getElementById('validateWordBtn');
-const propositionAreaElement = document.querySelector('.propositionArea');
-const scoreAreaElement = document.querySelector('.scoreArea');
-const sourceOptionList = document.querySelectorAll('.sourceOption');
-
 console.log(userTextInpuElement);
+
+const validateWordBtnElement = document.getElementById('validateWordBtn');
 console.log(validateWordBtnElement);
+
+const propositionAreaElement = document.querySelector('.propositionArea');
 console.log(propositionAreaElement);
-console.log(scoreAreaElement);
-console.log(sourceOptionList);
+
+const scoreAreaSpanElement = document.querySelector('.scoreArea span');
+console.log(scoreAreaSpanElement);
+
+const radioBtnList = document.querySelectorAll('.sourceOption input');
+console.log(radioBtnList);
 
 // launchGame();
