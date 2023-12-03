@@ -1,3 +1,4 @@
+// Declaration of arrays containing lists of words suggested to the user
 const words = ['Cachalot', 'Pétunia', 'Serviette'];
 const phrases = [
   'Pas de panique !',
@@ -5,29 +6,43 @@ const phrases = [
   'Merci pour le cadeau'
 ];
 
-let userWord = prompt('mots ou phrases');
 let score = 0;
 
-while (userWord !== 'mots' && userWord !== 'phrases') {
-  userWord = prompt('mots ou phrases');
+// Declaration of the variable containing the user's choice
+let userChoice = prompt(
+  "Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
+);
+
+// While the user has not entered "mots" or "phrases," they are prompted to enter a userChoice again
+while (userChoice !== 'mots' && userChoice !== 'phrases') {
+  userChoice = prompt(
+    "Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
+  );
 }
 
-if (userWord === 'mots') {
+if (userChoice === 'mots') {
+  // We traverse the array of words
   for (let i = 0; i < words.length; i++) {
-    while (userWord !== words[i]) {
-      userWord = prompt('Entrez le mot : ' + words[i]);
+    // We ask the user to enter the word corresponding to index i
+    let userWord = prompt('Entrez le mot : ' + words[i]);
+    if (userWord === words[i]) {
+      // If the word entered by the user is correct, we increment the score
+      score++;
     }
-    score++;
-    console.log('Bravo ! Votre score est de: ' + score);
   }
-} else if (userWord === 'phrases') {
+  console.log('Votre score est de ' + score + ' sur ' + words.length);
+} else {
+  // We traverse the array of phrases
   for (let i = 0; i < phrases.length; i++) {
-    while (userWord !== phrases[i]) {
-      userWord = prompt('Entrez la phrase : ' + phrases[i]);
+    // We ask the user to enter the phrase corresponding to index i
+    let userPhrase = prompt('Entrez la phrase : ' + phrases[i]);
+    if (userPhrase === phrases[i]) {
+      // If the phrase entered by the user is correct, we increment the score
+      score++;
     }
-    score++;
-    console.log('Bravo ! Votre score est de: ' + score);
   }
+  console.log('Votre score est de ' + score + ' sur ' + phrases.length);
 }
 
-console.log('SCORE FINAL : ' + score + '/3');
+// Note: This is not the only valid solution for this exercise; there are other more optimized ones,
+// but we will explore those in the upcoming chapters.
