@@ -8,18 +8,6 @@ const phrases = [
 
 let score = 0;
 
-// Declaration of the variable containing the user's choice
-let userChoice = prompt(
-  "Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
-);
-
-// While the user has not entered "mots" or "phrases," they are prompted to enter a userChoice again
-while (userChoice !== 'mots' && userChoice !== 'phrases') {
-  userChoice = prompt(
-    "Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
-  );
-}
-
 if (userChoice === 'mots') {
   // We traverse the array of words
   for (let i = 0; i < words.length; i++) {
@@ -48,4 +36,19 @@ function showResult(score, numberOfQuestions) {
   console.log(
     'Votre score fibal est de ' + score + ' sur ' + numberOfQuestions
   );
+}
+
+function choseWordsOrPhrases() {
+  // Declaration of the variable containing the user's choice
+  let userChoice = prompt(
+    "Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
+  );
+
+  // While the user has not entered "mots" or "phrases," they are prompted to enter a userChoice again
+  while (userChoice !== 'mots' && userChoice !== 'phrases') {
+    userChoice = prompt(
+      "Avec quelle liste désirez-vous jouer : 'mots' ou 'phrases' ?"
+    );
+  }
+  return userChoice;
 }
