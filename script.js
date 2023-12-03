@@ -44,5 +44,8 @@ if (userChoice === 'mots') {
   console.log('Votre score est de ' + score + ' sur ' + phrases.length);
 }
 
-// Note: This is not the only valid solution for this exercise; there are other more optimized ones,
-// but we will explore those in the upcoming chapters.
+function showResult(score, numberOfQuestions) {
+  console.log(
+    'Votre score fibal est de ' + score + ' sur ' + numberOfQuestions
+  );
+}
