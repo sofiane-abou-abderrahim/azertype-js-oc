@@ -6,8 +6,11 @@ function showResult(score, numberOfQuestions) {
 function launchGame() {
   let score = 0;
   let proposedWordsNumber = 0;
+  let i = 0;
 
   validateWordBtnElement.addEventListener('click', () => {
+    i++;
+    console.log(i);
     console.log(userTextInpuElement.value);
   });
 
