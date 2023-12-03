@@ -6,9 +6,9 @@
  *********************************************************************************/
 
 // Declaration of arrays containing the lists of words offered to the user
-const listeMots = ['Cachalot', 'Pétunia', 'Serviette'];
-const listePhrases = [
+const wordsList = ['Cachalot', 'Pétunia', 'Serviette'];
+const phrasesList = [
   'Pas de panique !',
-  "La vie, l'univers et le reste",
-  'Merci pour le poisson'
+  'La vie est belle',
+  'Merci pour le cadeau'
 ];
