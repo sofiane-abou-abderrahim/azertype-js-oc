@@ -47,5 +47,3 @@ function launchGame() {
   }
   showResult(score, proposedWordsNumber);
 }
-
-launchGame();
