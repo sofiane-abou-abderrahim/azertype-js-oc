@@ -30,8 +30,8 @@ function launchGame() {
   });
 
   for (let j = 0; j < radioBtnList.length; j++) {
-    radioBtnList[j].addEventListener('change', () => {
-      console.log(radioBtnList[j]);
+    radioBtnList[j].addEventListener('change', event => {
+      console.log(event.target.value);
     });
   }
 
