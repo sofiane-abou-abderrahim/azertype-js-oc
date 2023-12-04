@@ -8,9 +8,12 @@ function displayProposition(proposition) {
 }
 
 function launchGame() {
+  initAddEventListenerPopup();
   let score = 0;
   let i = 0;
   let propositionList = wordsList;
+  let subject;
+  let message;
 
   displayProposition(propositionList[i]);
 
