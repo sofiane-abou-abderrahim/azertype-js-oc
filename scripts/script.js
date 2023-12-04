@@ -13,18 +13,16 @@ function displayEmail(nom, email, score) {
 }
 
 function validateName(name) {
-  if (name.length >= 2) {
-    return true;
+  if (name.length < 2) {
+    throw new Error(`Le nom ${name} est trop court`);
   }
-  return false;
 }
 
 function validateEmail(email) {
   let validEmail = new RegExp('[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+');
-  if (validEmail.test(email)) {
-    return true;
+  if (!validEmail.test(email)) {
+    throw new Error(`L’e-mail ${email} n’est pas valide`);
   }
-  return false;
 }
 
 function manageForm(emailScore) {
