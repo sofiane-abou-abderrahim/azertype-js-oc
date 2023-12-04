@@ -13,11 +13,10 @@ function displayEmail(nom, email, score) {
 }
 
 function validateName(name) {
-  if (name === '' && name.length < 2) {
+  if (name.length >= 2) {
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
 
 function validateEmail(email) {
