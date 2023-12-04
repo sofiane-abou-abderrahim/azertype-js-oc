@@ -30,10 +30,6 @@ function launchGame() {
   });
 
   for (let j = 0; j < radioBtnList.length; j++) {
-    if (radioBtnList[j].checked) {
-      console.log(radioBtnList[j].value);
-    }
-
     radioBtnList[j].addEventListener('change', () => {
       console.log(radioBtnList[j]);
     });
