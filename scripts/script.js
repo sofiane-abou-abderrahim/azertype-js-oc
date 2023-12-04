@@ -12,13 +12,19 @@ function displayEmail(nom, email, score) {
   location.href = mailto;
 }
 
+function validateName(name) {
+  if (name.value === '' && name.length < 2) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function launchGame() {
   initAddEventListenerPopup();
   let score = 0;
   let i = 0;
   let propositionList = wordsList;
-  let subject;
-  let message;
 
   displayProposition(propositionList[i]);
 
