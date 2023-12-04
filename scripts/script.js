@@ -26,13 +26,15 @@ function validateEmail(email) {
 }
 
 function manageForm(emailScore) {
-  let popupName = popupFormNameElement.value;
-  let popupEmail = popupFormEmailElement.value;
+  try {
+    let popupName = popupFormNameElement.value;
+    let popupEmail = popupFormEmailElement.value;
 
-  if (validateName(popupName) && validateEmail(popupEmail)) {
+    validateName(popupName);
+    validateEmail(popupEmail);
     displayEmail(popupName, popupEmail, emailScore);
-  } else {
-    console.log('Erreur');
+  } catch (error) {
+    console.log(error);
   }
 }
 
