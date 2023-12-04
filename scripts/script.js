@@ -7,6 +7,11 @@ function displayProposition(proposition) {
   propositionAreaElement.innerHTML = proposition;
 }
 
+function displayEmail(nom, email, score) {
+  let mailto = `mailto:${email}?subject=Partage du score AzerType&body=Salut, je suis ${nom} et je viens de réaliser le score ${score} sur le site d'AzerType !`;
+  location.href = mailto;
+}
+
 function launchGame() {
   initAddEventListenerPopup();
   let score = 0;
@@ -50,8 +55,10 @@ function launchGame() {
 
     let emailScore = `${scroe} / ${i}`;
 
-    console.log(popupFormNameElement.value);
-    console.log(popupFormEmailElement.value);
+    let popupName = popupFormNameElement.value;
+    let popupEmail = popupFormEmailElement.value;
+
+    displayEmail(popupName, popupEmail, emailScore);
   });
 
   showResult(score, i);
