@@ -31,7 +31,6 @@ function displayErrorMessage(message) {
   if (!errorMessageSpan) {
     errorMessageSpan = document.createElement('span');
     errorMessageSpan.id = 'errorMessage';
-
     popup.append(errorMessageSpan);
   }
   errorMessageSpan.innerHTML = message;
@@ -45,8 +44,9 @@ function manageForm(emailScore) {
     validateName(popupName);
     validateEmail(popupEmail);
     displayEmail(popupName, popupEmail, emailScore);
+    displayErrorMessage('');
   } catch (error) {
-    console.log(error);
+    displayErrorMessage(error.message);
   }
 }
 
