@@ -73,7 +73,11 @@ function launchGame() {
     let popupName = popupFormNameElement.value;
     let popupEmail = popupFormEmailElement.value;
 
-    displayEmail(popupName, popupEmail, emailScore);
+    if (validateName(popupName) && validateEmail(popupEmail)) {
+      displayEmail(popupName, popupEmail, emailScore);
+    } else {
+      console.log('Erreur');
+    }
   });
 
   showResult(score, i);
