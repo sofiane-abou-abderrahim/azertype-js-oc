@@ -26,9 +26,15 @@ function validateEmail(email) {
 }
 
 function displayErrorMessage(message) {
-  let errorMessageSpan = document.createElement('span');
+  let errorMessageSpan = document.getElementById('errorMessage');
+
+  if (!errorMessageSpan) {
+    errorMessageSpan = document.createElement('span');
+    errorMessageSpan.id = 'errorMessage';
+
+    popup.append(errorMessageSpan);
+  }
   errorMessageSpan.innerHTML = message;
-  popup.append(errorMessageSpan);
 }
 
 function manageForm(emailScore) {
