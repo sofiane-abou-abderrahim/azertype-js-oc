@@ -13,10 +13,19 @@ function displayEmail(nom, email, score) {
 }
 
 function validateName(name) {
-  if (name.value === '' && name.length < 2) {
+  if (name === '' && name.length < 2) {
     return false;
   } else {
     return true;
+  }
+}
+
+function validateEmail(email) {
+  let validEmail = new RegExp('[a-z._-]+@[a-z._-]+\\.[a-z._-]+');
+  if (validEmail.test(email)) {
+    return true;
+  } else {
+    return false;
   }
 }
 
