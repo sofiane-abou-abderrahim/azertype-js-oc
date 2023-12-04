@@ -38,6 +38,7 @@ function launchGame() {
       } else {
         propositionList = phrasesList;
       }
+      displayProposition(propositionList[i]);
     });
   }
 
