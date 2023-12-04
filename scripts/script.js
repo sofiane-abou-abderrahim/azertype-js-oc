@@ -27,6 +27,17 @@ function validateEmail(email) {
   return false;
 }
 
+function manageForm(emailScore) {
+  let popupName = popupFormNameElement.value;
+  let popupEmail = popupFormEmailElement.value;
+
+  if (validateName(popupName) && validateEmail(popupEmail)) {
+    displayEmail(popupName, popupEmail, emailScore);
+  } else {
+    console.log('Erreur');
+  }
+}
+
 function launchGame() {
   initAddEventListenerPopup();
   let score = 0;
@@ -65,16 +76,8 @@ function launchGame() {
 
   popupFormElement.addEventListener('submit', event => {
     event.preventDefault();
-
-    let popupName = popupFormNameElement.value;
-    let popupEmail = popupFormEmailElement.value;
-
-    if (validateName(popupName) && validateEmail(popupEmail)) {
-      let emailScore = `${score} / ${i}`;
-      displayEmail(popupName, popupEmail, emailScore);
-    } else {
-      console.log('Erreur');
-    }
+    let emailScore = `${score} / ${i}`;
+    manageForm(emailScore);
   });
 
   showResult(score, i);
