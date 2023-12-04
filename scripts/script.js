@@ -15,17 +15,12 @@ function launchGame() {
 
   validateWordBtnElement.addEventListener('click', () => {
     console.log(userTextInpuElement.value);
-
     if (userTextInpuElement.value === wordsList[i]) {
       score++;
     }
-
     i++;
-
     showResult(score, i);
-
     userTextInpuElement.value = '';
-
     if (wordsList[i] === undefined) {
       displayProposition('Le jeu est fini');
       validateWordBtnElement.disabled = true;
@@ -33,6 +28,16 @@ function launchGame() {
       displayProposition(wordsList[i]);
     }
   });
+
+  for (let i = 0; i < radioBtnList.length; i++) {
+    if (radioBtnList[i].checked) {
+      console.log(radioBtnList[i].value);
+    }
+
+    radioBtnList[i].addEventListener('change', () => {
+      console.log(radioBtnList[i]);
+    });
+  }
 
   showResult(score, i);
 }
