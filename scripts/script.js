@@ -20,12 +20,11 @@ function validateName(name) {
 }
 
 function validateEmail(email) {
-  let validEmail = new RegExp('[a-z._-]+@[a-z._-]+\\.[a-z._-]+');
+  let validEmail = new RegExp('[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+');
   if (validEmail.test(email)) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 function launchGame() {
