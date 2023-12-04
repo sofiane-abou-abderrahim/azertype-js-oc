@@ -47,6 +47,8 @@ function launchGame() {
 
   popupFormElement.addEventListener('submit', event => {
     event.preventDefault();
+    console.log(popupFormNameElement.value);
+    console.log(popupFormEmailElement.value);
   });
 
   showResult(score, i);
