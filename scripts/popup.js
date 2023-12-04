@@ -31,7 +31,7 @@ function hidePopup() {
  */
 function initAddEventListenerPopup() {
   // Listening for a click on the "share" button.
-  shareBtn = document.querySelector('.shareZone button');
+  shareBtn = document.querySelector('.shareArea button');
   let popupBackground = document.querySelector('.popupBackground');
   shareBtn.addEventListener('click', () => {
     // When the share button is clicked, the popup is displayed.
