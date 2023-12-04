@@ -29,13 +29,13 @@ function launchGame() {
     }
   });
 
-  for (let i = 0; i < radioBtnList.length; i++) {
-    if (radioBtnList[i].checked) {
-      console.log(radioBtnList[i].value);
+  for (let j = 0; j < radioBtnList.length; j++) {
+    if (radioBtnList[j].checked) {
+      console.log(radioBtnList[j].value);
     }
 
-    radioBtnList[i].addEventListener('change', () => {
-      console.log(radioBtnList[i]);
+    radioBtnList[j].addEventListener('change', () => {
+      console.log(radioBtnList[j]);
     });
   }
 
