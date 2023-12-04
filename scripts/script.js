@@ -42,5 +42,9 @@ function launchGame() {
     });
   }
 
+  popupFormElement.addEventListener('submit', event => {
+    event.preventDefault();
+  });
+
   showResult(score, i);
 }
