@@ -14,9 +14,9 @@ function displayEmail(nom, email, score) {
 
 function validateName(name) {
   if (name.length >= 2) {
-    return false;
+    return true;
   }
-  return true;
+  return false;
 }
 
 function validateEmail(email) {
@@ -66,12 +66,11 @@ function launchGame() {
   popupFormElement.addEventListener('submit', event => {
     event.preventDefault();
 
-    let emailScore = `${score} / ${i}`;
-
     let popupName = popupFormNameElement.value;
     let popupEmail = popupFormEmailElement.value;
 
     if (validateName(popupName) && validateEmail(popupEmail)) {
+      let emailScore = `${score} / ${i}`;
       displayEmail(popupName, popupEmail, emailScore);
     } else {
       console.log('Erreur');
